@@ -2,15 +2,6 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-function logger(req, res, next) {
-  console.log('##### NEW REQUEST #####');
-  console.log(req.url);
-  console.log(req.method);
-  next();
-}
-
-app.use(logger);
-
 app.get('/', (req, res) => {
   res.send('Hello root!');
 });
